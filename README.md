@@ -33,8 +33,6 @@ mathematical division label, whilst keeping division function working.
 
 # Homework
 
-Finish your Calculator app with your group. This is a group assignment, keep using Pivotal! 
-
 Using Shoes or a text-based terminal application, create a trip calculator. 
 Ask the user (politely) for four inputs:
 
@@ -48,3 +46,11 @@ Your output is a string: “Your trip will take 3.5 hours and cost $255.33.”
 For every 1 MPH over 60 MPH, reduce the the MPG by 2 MPG. (i.e. a car that 
 normally gets 30 mpg would only get 28 mpg if its speed were 61 mph. Handle the
 case that this value gets below zero).
+ 
+# Homework Extensions
+
+Bonus points for creating another calculator or amending your calculator with 
+the following features:
+
+* Mortgage calculator: Calculate the monthly payment when given the other variables as input.
+* BMI: Calculate the BMI when given the height and weight.
