@@ -21,16 +21,18 @@ out how to achieve them. Each time you make a change, commit and push your code
 to your GitHub account.
 
 1. Fix the layout so that the numbers run from 0-9 in rows, e.g 7-8-9
-2. Implement a cancel entry (CE) button that clears the input
-3. Implement other scientific calculator functions, e.g. power of two, power to 
+2. Refactor your code. Where might we use a case statement to simplify our solution?
+3. Implement a cancel entry (C) button that clears the input
+4. Implement other scientific calculator functions, e.g. power of two, power to 
 a given number, square root etc.
-4. Fix the problem where the inputs are treated as integers, not floats, so that
-we can get correct results. See if you can have the input keep its integer values.
 5. Try experimenting with the user interface, changing colours, layouts and 
-backgrounds
-6. See if you can change the label of the operator buttons to use the 
+backgrounds and gradients
+6. Fix the problem where the inputs are treated as integers, not floats, so that
+we can get correct results. See if you can have the input keep its integer values.
+Hint - ask us for help!
+7. See if you can change the label of the operator buttons to use the 
 mathematical division label, whilst keeping division function working. 
-
+ 
 # Homework
 
 Using Shoes or a text-based terminal application, create a trip calculator. 
