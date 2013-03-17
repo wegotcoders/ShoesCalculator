@@ -54,3 +54,7 @@ the following features:
 
 * Mortgage calculator: Calculate the monthly payment when given the other variables as input.
 * BMI: Calculate the BMI when given the height and weight.
+
+# Submission
+
+Once you're done, submit a pull request so that I can review your work.
