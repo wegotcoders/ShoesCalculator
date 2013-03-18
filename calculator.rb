@@ -1,34 +1,35 @@
 Shoes.app :title => "My Amazing Calculator", :width => 240, :height => 240 do
   stack :margin => 20 do
-    @output = edit_line(:width => 190)
+    @output = edit_line
     
-    flow do  
-      flow(:width => 150) do
-        (0..9).each do |i|
-          button i.to_s do
-            append(i.to_s)
-          end
+    flow do
+      %w(0 1 2 3 4 5 6 7 8 9 + / * -).each do |op|      
+        button op do         
+          append op
         end
       end
-    
-      flow(:width => 50) do
-        %w(+ / * -).each do |op|
-          button op do    
-            append op
-          end
-        end
-        
-        button "=" do
-          @input = eval(@input).to_s    
-          @output.text = @input
-        end
+      
+      button "=" do
+        eval_expression
       end
     end
+    
   end
   
+  # Stick a string on the end of our input
+  #
   def append(s)
-    @input = "" if @input.nil?
+    if @input.nil?
+      @input = ""
+    end
     @input += s
+    @output.text = @input
+  end
+  
+  # Evaluate the input we've got so far
+  #
+  def eval_expression
+    @input = eval(@input).to_s
     @output.text = @input
   end
   
