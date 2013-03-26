@@ -32,8 +32,8 @@ out how to achieve them. Each time you make a change, commit and push your code
 to your GitHub account.
 
 1. Fix the layout so that the numbers run from 0-9 in rows, e.g 7-8-9
-2. Refactor your code. Where might we use a case statement to simplify our solution?
-3. Implement a cancel entry (C) button that clears the input
+2. Implement a cancel entry (C) button that clears the input
+3. Refactor your code. Where might we use a case statement to simplify our solution?
 4. Implement other scientific calculator functions, e.g. power of two, power to 
 a given number, square root etc.
 5. Try experimenting with the user interface, changing colours, layouts and 
