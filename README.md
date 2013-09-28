@@ -1,18 +1,29 @@
 ShoesCalculator
 ===============
 
-A little app we're going to modify to learn some Ruby basics
+A calculator written in Ruby using the Shoes graphical API
 
 # INSTALL
 
-1. Get a copy of Shoes running, resources online at:
-    https://github.com/shoes/shoes/wiki/Building-Shoes
-    http://shoesrb.com/manual/Installing.html
+* Get a copy of Shoes running, resources online at:
 
-2. Fork your own copy of this exercise and clone it
+> https://github.com/shoes/shoes/wiki/Building-Shoes
 
-3. Run
-    shoes calculator.rb
+> http://shoesrb.com/manual/Installing.html
+
+I had to add the following line to my ~/.bashrc to get this running on OSX:
+
+```
+PATH=/Applications/Shoes.app/Contents/MacOS:$PATH
+```
+
+* Fork your own copy of this exercise and clone it
+
+* Run shoes with the following command, from the directory you just cloned into
+
+```
+shoes calculator.rb
+```
 
 # TODO
 
