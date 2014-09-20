@@ -5,30 +5,33 @@ A calculator written in Ruby using the Shoes graphical API
 
 # INSTALL
 
+We'll get a copy of Shoes running.
 
-* Get a copy of Shoes running, resources online at:
+* First you'll need to install JRuby. JRuby is Ruby syntax using an interpreter
+written in Java, instead of C, which is the language normally used. This allows
+shoes to use graphics libraries that are easier to install and work with than
+the C-based alternatives.
 
-> https://github.com/shoes/shoes4
+To begin with, install JRuby as per the instructions http://jruby.org/getting-started
 
-* You'll need to install jruby:
+> rvm install jruby
 
-```
-$ rvm install jruby
-```
+If you see an error relating to C extensions, I had to set the following variable
+in bash:
 
-* And then shoes4:
+> export JRUBY_OPTS=-Xcext.enabled=true
 
-```
-$ gem install shoes --pre
-```
+* And then the shoes4 gem. Resources online at: https://github.com/shoes/shoes4.
+Make sure that you are using JRuby before you install the gem
+
+> rvm use jruby
+> gem install shoes --pre
 
 * Fork your own copy of this exercise and clone it
 
 * Run shoes with the following command, from the directory you just cloned into
 
-```
-shoes calculator.rb
-```
+> shoes calculator.rb
 
 # TODO
 
@@ -50,22 +53,6 @@ mathematical division label, whilst keeping division function working.
 7. Fix the problem where the inputs are treated as integers, not floats, so that
 we can get correct results. See if you can have the input keep its integer values.
 Hint - ask us for help!
-
-# Homework
-
-Using Shoes or a text-based terminal application, create a trip calculator.
-Ask the user (politely) for four inputs:
-
-* Distance – how far will you drive?
-* MPG – what is the fuel efficiency of the car?
-* £/PG – how much does petrol cost per gallon?
-* Speed – how fast will you drive?
-
-Your output is a string: “Your trip will take 3.5 hours and cost £255.33.”
-
-For every 1 MPH over 60 MPH, reduce the the MPG by 2 MPG. (i.e. a car that
-normally gets 30 mpg would only get 28 mpg if its speed were 61 mph. Handle the
-case that this value gets below zero).
 
 # Homework Extensions
 
