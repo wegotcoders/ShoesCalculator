@@ -1,9 +1,10 @@
-Shoes.app :title => "My Amazing Calculator", :width => 240, :height => 240 do
-  stack :margin => 20 do
-    @output = edit_line
+Shoes.app :title => "My Slightly Broken Calculator", :width => 200, :height => 240 do
+  stack :margin => 55 do
+    @output = edit_line width: 100
+
     
     flow do
-      %w(0 1 2 3 4 5 6 7 8 9 + / * -).each do |op|      
+      %w(9 8 7 6 5 4 3 2 1 0 + / * ( )- ).each do |op|      
         button op do         
           append op
         end
@@ -12,6 +13,32 @@ Shoes.app :title => "My Amazing Calculator", :width => 240, :height => 240 do
       button "=" do
         eval_expression
       end
+
+      button "c" do
+        @input = ""
+        @output.text = ""
+      end
+
+      button "^2" do
+        append "**2"
+      end
+
+      button "sqrt" do
+
+        # @inputInt  = @input.to_i
+        # @sqrt = Math.sqrt(@inputInt)
+        # @sqrtStr = @sqrt.to_s
+        # @output.text = @sqrtStr
+
+       @input = Math.sqrt(@input.to_i).to_s
+       @output.text = @input
+      end
+
+      button "log2" do
+       @input = Math.log2(@input.to_i).to_s
+       @output.text = @input
+      end
+
     end
     
   end
