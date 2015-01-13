@@ -12,19 +12,37 @@ Shoes.app :title => "My Amazing Calculator", :width => 240, :height => 240 do
       button "=" do
         eval_expression
       end
+
+      button "C" do
+        @input = ""
+        @output.text = " "
+      end
+
+      button "^2" do
+        append "**2"
+      end
+
+      button "sqrt" do
+        @input = Math.sqrt(@input.to_i).to_s
+        @output.text = @input
+      end
+
+      button "log(2)" do
+        @input = Math.log2(@input.to_i).to_s
+        @output.text = @input
+      end
+
     end
-    
   end
   
   # Stick a string on the end of our input
   #
   def append(s)
-    if @input.nil?
-      @input = ""
-    end
+    @input ||= ""
     @input += s
     @output.text = @input
   end
+
   
   # Evaluate the input we've got so far
   #
