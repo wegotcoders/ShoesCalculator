@@ -24,8 +24,10 @@ in bash:
 * And then the shoes4 gem. Resources online at: https://github.com/shoes/shoes4.
 Make sure that you are using JRuby before you install the gem
 
-> rvm use jruby
-> gem install shoes --pre
+```
+rvm use jruby
+gem install shoes --pre`
+```
 
 * Fork your own copy of this exercise and clone it
 
