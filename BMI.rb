@@ -1,3 +1,4 @@
+require 'pry'
 Shoes.app :title => "My Amazing Calculator", :width => 240, :height => 240 do
   stack :margin => 20 do
     @output = edit_line
@@ -7,10 +8,12 @@ Shoes.app :title => "My Amazing Calculator", :width => 240, :height => 240 do
     stack :width => 80 do
       flow do
 
-        %w(7 8 9 4 5 6 1 2 3 . C m inches).each do |op|      
+        button_array = %w(7 8 9 4 5 6 1 2 3 . C m inches)
+        button_array.each do |op|      
           button op do
             case op
               when "m"
+                binding.pry
                 @height = (@input.to_f**2)
                 puts @height
                 ask_for_weight
@@ -45,6 +48,13 @@ Shoes.app :title => "My Amazing Calculator", :width => 240, :height => 240 do
       @input = ((@input.to_f*0.453592) / @height).to_s
       @output.text = @input
     end
+
+    delete_height_buttons
+
+  end
+
+  def delete_height_buttons
+
   end
 
   def append(s)
@@ -52,5 +62,6 @@ Shoes.app :title => "My Amazing Calculator", :width => 240, :height => 240 do
     @input += s
     @output.text = @input
   end
+
 
 end
