@@ -6,7 +6,7 @@ Shoes.app :title => "My Amazing Calculator", :width => 189, :height => 240 do
     @output = edit_line width:166, margin:4
     
     flow do
-      %w(7 8 9 + 4 5 6 - 1 2 3 ÷ 0 = C * ^ sqrt log2).each do |op| 
+      %w(7 8 9 + 4 5 6 - 1 2 3 ÷ 0 = C * ^ sqrt log2 mrtg).each do |op| 
         button op do  
           case op
             when "="
@@ -21,10 +21,13 @@ Shoes.app :title => "My Amazing Calculator", :width => 189, :height => 240 do
               append "/"
             when "sqrt"
               @input = Math.sqrt(@input.to_f).to_s
-              @output.text =@input
+              @output.text = @input
             when "log2"
               @input = Math.log2(@input.to_i).to_s
-              @output.text =@input
+              @output.text = @input
+            when "mrtg"
+              @input = @input.to_f/12
+              @output.text = @input
             else       
               append op
           end
