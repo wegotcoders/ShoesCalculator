@@ -15,8 +15,8 @@ Shoes.app :title => "My Amazing Calculator", :width => 189, :height => 240 do
               @output.text = nil
               @input = nil
             when "^"
-              append "**2"
-              eval_expression
+              @input = @input.to_i**2
+              @output.text = @input
             when "÷"
               append "/"
             when "sqrt"
@@ -42,6 +42,9 @@ Shoes.app :title => "My Amazing Calculator", :width => 189, :height => 240 do
     if @input.nil?
       @input = ""
     end
+    # case s
+    # when s==bmi
+    #   @input + s
     @input += s
     @output.text = @input
   end
