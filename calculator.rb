@@ -35,21 +35,15 @@ Shoes.app :title => "My Amazing Calculator", :width => 189, :height => 240 do
       end
     end
   end
-  
-  # Stick a string on the end of our input
-  #
+
   def append(s)
     if @input.nil?
       @input = ""
     end
-    # case s
-    # when s==bmi
-    #   @input + s
     @input += s
     @output.text = @input
   end
-  
-  # Evaluate the input we've got so far
+
   def eval_expression
     string_arr = @input.split(/([\/*+\^-])/)
     string_arr.map! do |k|
@@ -58,5 +52,8 @@ Shoes.app :title => "My Amazing Calculator", :width => 189, :height => 240 do
     @input = string_arr.join
     @input = eval(@input)
     @output.text = @input
+    @input = @input.to_s
   end
+  
+
 end
