@@ -5,22 +5,24 @@ Shoes.app :title => "My Amazing Calculator", :width => 240, :height => 240 do
 
     @output.text = "Enter your height"
 
+    # How can we recreate this  every time "m" or "inches" is pressed?
+
     stack :width => 80 do
       flow do
-
         button_array = %w(7 8 9 4 5 6 1 2 3 . C m inches)
         button_array.each do |op|      
           button op do
             case op
               when "m"
-                binding.pry
                 @height = (@input.to_f**2)
                 puts @height
+                delete_buttons(button_array)
                 ask_for_weight
               when "inches"
                 inches_to_meters = 0.0254
                 @height = ((inches_to_meters*(@input.to_f))**2)
                 puts @height
+                delete_buttons(button_array)
                 ask_for_weight
               when "C"
                 @input = ""
@@ -32,6 +34,10 @@ Shoes.app :title => "My Amazing Calculator", :width => 240, :height => 240 do
         end
       end
     end
+  end
+
+  def delete_buttons(button_array)
+    button_array.delete("m").delete("inches")
   end
 
 
@@ -49,13 +55,8 @@ Shoes.app :title => "My Amazing Calculator", :width => 240, :height => 240 do
       @output.text = @input
     end
 
-    delete_height_buttons
-
   end
 
-  def delete_height_buttons
-
-  end
 
   def append(s)
     @input ||= ""
